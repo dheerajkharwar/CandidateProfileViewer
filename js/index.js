@@ -49,12 +49,7 @@ function cvIterator(profiles) {
     let nextIndex = 0;
     return {
         next: function () {
-            if(nextIndex < profiles.length){
-                return { value: profiles[nextIndex++], done: false };
-            }else{
-                nextIndex=0;
-                return { value: profiles[nextIndex++], done: false };
-            }
+                return nextIndex < profiles.length?{ value: profiles[nextIndex++], done: false }:{ done: false };
         }
     };
 }
